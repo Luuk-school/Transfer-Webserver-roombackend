@@ -14,5 +14,5 @@ jobs:
         run: docker build ./ -t luuk-school/room-backend:latest
       - name: push image
         run: |
-          docker login -u ridderleeuw -p ${{ secrets.DOCKER_HUB_TOKEN }}
+          docker login -u luukschool -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push luuk-school/room-backend:latest
