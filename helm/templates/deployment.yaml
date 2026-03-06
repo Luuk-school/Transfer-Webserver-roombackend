@@ -1,36 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
-  labels:
-    app: {{ .Chart.Name }}
+  name: Room-backend
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: Room-backend
+  replicas: 2
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: Room-backend
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+      - name: Room-backend
+        image: ## Verwerk Hier je Github container Image
         ports:
-        - containerPort: {{ .Values.service.port }}
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: {{ .Values.service.port }}
-          initialDelaySeconds: 10
-          periodSeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: {{ .Values.service.port }}
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        resources:
-          {{- toYaml .Values.resources | nindent 10 }}
+        - containerPort: 5001
