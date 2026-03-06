@@ -2,8 +2,6 @@ name: Transfer-Room-backend-Docker-Build
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   publish_image:
@@ -15,4 +13,5 @@ jobs:
         run: docker build ./ -t luuk-school/room-backend:latest
       - name: push image
         run: |
+          docker login -u ridderleeuw -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push luuk-school/room-backend:latest
