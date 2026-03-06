@@ -1,5 +1,6 @@
 name: Transfer-Room-backend-Docker-Build
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
 
