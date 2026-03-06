@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Room-backend
+  name: room-backend
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: Room-backend
-  replicas: 2
+      app: room-backend
   template:
     metadata:
       labels:
-        app: Room-backend
+        app: room-backend
     spec:
       containers:
-      - name: Room-backend
-        image: luukschool/room-backend:latest
+      - name: room-backend
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-        - containerPort: 5001
+        - containerPort: {{ .Values.service.port }}
