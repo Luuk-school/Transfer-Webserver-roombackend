@@ -9,6 +9,7 @@ spec:
     repoURL: https://github.com/Luuk-school/Transfer-Webserver-roombackend.git
     targetRevision: HEAD
     path: helm
+    helm: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: room-backend
