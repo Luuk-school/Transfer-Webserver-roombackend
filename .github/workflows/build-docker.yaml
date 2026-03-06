@@ -11,8 +11,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: build image
-        run: docker build ./ -t luuk-school/room-backend:latest
+        run: docker build ./ -t luukschool/room-backend:latest
       - name: push image
         run: |
           docker login -u luukschool -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker push luuk-school/room-backend:latest
+          docker push luukschool/room-backend:latest
