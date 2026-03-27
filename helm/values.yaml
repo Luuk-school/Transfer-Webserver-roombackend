@@ -1,5 +1,5 @@
 image:
   repository: luukschool/room-backend
-  tag: latest
+  tag: "5fd0e5d40de2836bf36f6f08f7b2064017d8eaa3"
 service:
   port: 5001
