@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: room-backend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: room-backend
